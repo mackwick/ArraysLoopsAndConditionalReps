@@ -70,7 +70,64 @@ for (let turtle of ninjaTurtles) {
 ////////////////////////////////
 // Methods, Revisited
 ////////////////////////////////
+const favMovies = ['Jaws', 'The Fellowship of the Ring', 'Howl\'s Moving Castle', 'Django Unchained', 'Cloud Atlas', 'The Usual Suspects', 'Toy Story', 'Conan the Barbarian', 'Titanic', 'Harry Potter', 'Fried Green Tomatoes', 'Volver', 'Oculus', 'Seven', 'Black Panther', 'Harry Potter', 'Imitation of Life', 'Snatch', 'Fast and Furious'];
 
+//Console log: the index of Titanic
+console.log(favMovies.indexOf('Titanic'))
+
+//1. use the .sort method. 
+favMovies.sort()
+
+    //Thought question: what did this do to the array? Did it permanently alter it?
+    // it put it in alphabetical order; seems to be permanent for the purposes of logging/other methods
+
+//2. Use the method pop
+favMovies.pop()
+
+//3. push "Guardians of the Galaxy"
+favMovies.push("Guardians of the Galaxy")
+
+//4. Reverse the array
+favMovies.reverse()
+
+//5. Use the shift method
+favMovies.shift()
+
+//6. unshift - what does it return?
+favMovies.unshift("Guardians of the Galaxy")
+    // it returns whatever I add and I just re-added Guardians
+
+//7. splice "Django Unchained" and add "Avatar" (try finding the index of "Django Unchained", instead of counting it yourself) Thought question: did this permanently alter our array?
+console.log(favMovies.indexOf('Django Unchained'))
+favMovies.splice(15, 1, 'Avatar')
+    // seems to have permanently altered it
+
+//8. slice the last half of the array (challenge yourself and try to programatically determine the middle of the array rather than counting it and hard coding it) - Thought question: did this permanently alter our array?
+console.log(favMovies.length)
+console.log(favMovies.slice(10))
+    // No, it just returns a slice of it
+
+//9. store the value of your slice in a variable, console.log it - Thought question: what is going on here?
+const halfFavMovies = favMovies.slice(10)
+console.log(halfFavMovies)
+    //A copy of the value of the slice of favMovies is now saved to halfFavMovies 
+
+//10. console.log your final results
+console.log(favMovies)
+console.log(halfFavMovies)
+
+// After running the above tasks, console.log the index of "Fast and Furious"-We removed it from the array, what value do we get when we look for the index of something that is not in the array?
+    //So, actually I removed "Guardians of the Galaxy" and then readded it back because I did the "pop" after sorting, but I'll remove something to see.
+    favMovies.pop()
+    console.log(favMovies.indexOf('Black Panther'))
+    // It shows it as -1! Weird. 
+    favMovies.pop()
+    console.log(favMovies.indexOf('Black Panther'))
+    console.log(favMovies.indexOf('Cloud Atlas'))
+    // You get -1 when you try to find the index of all popped items
+
+// Thought question: that we declared the variable favMovies with const, and yet, we were allowed to change the array. Weird? Should we have used let?
+    //No, because favMovies is our array of fave movies. Even if those individual movies change, it's still an array of our fave movies.
 
 ////////////////////////////////
 // Where is Waldo
