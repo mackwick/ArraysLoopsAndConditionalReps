@@ -154,7 +154,20 @@ console.log(whereIsWaldo[2][1][1])
 ////////////////////////////////
 //  Excited Kitten
 ////////////////////////////////
+//1. Write code that logs "Love me, pet me! HSSSSSS!" 20 times.
+for (let i = 1; i < 21; i++) {
+    console.log("Love me, pet me! HSSSSSSSSS!")
+}
 
+//2. For every even number in your loop, log "...human...why you taking pictures of me?...", "...the catnip made me do it...", or "...why does the red dot always get away..." at random.
+const catThoughts = ["...human...why you taking pictures of me?...", "...the catnip made me do it...", "...why does the red dot always get away..."]
+
+for (let i = 1; i < 21; i++) {
+    const randomCat = catThoughts[Math.round(Math.random() * 2)]
+    if (i % 2 === 0) {
+        console.log(randomCat)
+    } else {console.log("Love me, pet me! HSSSSSSSSS!")}
+}
 
 ////////////////////////////////
 //  Find the Median
